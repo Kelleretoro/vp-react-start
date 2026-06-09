@@ -1,0 +1,94 @@
+{
+  "compilerOptions": {
+    // -------------------------------------------------------------------------
+    // Runtime environment
+    // -------------------------------------------------------------------------
+
+    // ES2022 matches TanStack Start's recommended TypeScript baseline and keeps
+    // syntax/API assumptions stable. Raise `target`/`lib` only when the app
+    // intentionally targets newer runtimes or provides the needed polyfills. Vite
+    // controls final syntax transforms through `build.target`; it does not make
+    // every newer built-in API available at runtime. Avoid ESNext so TypeScript
+    // upgrades do not silently expand the available API surface.
+    "target": "ES2022",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+
+    // -------------------------------------------------------------------------
+    // React
+    // -------------------------------------------------------------------------
+
+    "jsx": "react-jsx",
+
+    // -------------------------------------------------------------------------
+    // Module system
+    // -------------------------------------------------------------------------
+
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "isolatedModules": true,
+    "moduleDetection": "force",
+
+    // TanStack Start warns against enabling this because it can interfere with
+    // server/client bundling boundaries.
+    // "verbatimModuleSyntax": true,
+
+    // -------------------------------------------------------------------------
+    // Import aliases
+    // -------------------------------------------------------------------------
+
+    "paths": {
+      "#/*": ["./src/*"]
+    },
+
+    // -------------------------------------------------------------------------
+    // Strict mode
+    // -------------------------------------------------------------------------
+
+    "strict": true,
+
+    // Included by strict:
+    // "alwaysStrict": true,
+    // "noImplicitAny": true,
+    // "noImplicitThis": true,
+    // "strictBindCallApply": true,
+    // "strictBuiltinIteratorReturn": true,
+    // "strictFunctionTypes": true,
+    // "strictNullChecks": true,
+    // "strictPropertyInitialization": true,
+    // "useUnknownInCatchVariables": true,
+
+    // -------------------------------------------------------------------------
+    // Extra correctness checks
+    // -------------------------------------------------------------------------
+
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "exactOptionalPropertyTypes": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noUncheckedIndexedAccess": true,
+
+    // Uncomment if every function should explicitly return on all paths.
+    // "noImplicitReturns": true,
+
+    // -------------------------------------------------------------------------
+    // Unused code checks
+    // -------------------------------------------------------------------------
+
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+
+    // -------------------------------------------------------------------------
+    // Emit
+    // -------------------------------------------------------------------------
+
+    "noEmit": true,
+
+    // -------------------------------------------------------------------------
+    // Type checking performance
+    // -------------------------------------------------------------------------
+
+    "skipLibCheck": true
+  }
+}
