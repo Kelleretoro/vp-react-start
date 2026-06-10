@@ -76,6 +76,7 @@ export default defineConfig({
 
     sortTailwindcss: {
       functions: ["clsx", "cn", "cva"],
+      stylesheet: "src/styles.css",
     },
   },
 
