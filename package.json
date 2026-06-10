@@ -3,7 +3,6 @@
   "version": "0.0.0",
   "private": true,
   "type": "module",
-  "sideEffects": false,
   "scripts": {
     "dev": "vp run task:app:dev",
     "fmt": "vp run task:app:fmt",
