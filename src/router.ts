@@ -5,8 +5,9 @@ import { routeTree } from "./routeTree.gen";
 export function getRouter() {
   return createRouter({
     routeTree,
-    scrollRestoration: true,
     defaultPreload: "intent",
+    defaultStructuralSharing: true,
+    scrollRestoration: true,
   });
 }
 
