@@ -16,11 +16,13 @@ export const Route = createRootRoute({
   notFoundComponent: RootNotFoundComponent,
 });
 
+const showRouterDevtools = import.meta.env.DEV;
+
 function RootComponent() {
   return (
     <RootDocument>
       <Outlet />
-      <TanStackRouterDevtools />
+      {showRouterDevtools ? <TanStackRouterDevtools /> : null}
     </RootDocument>
   );
 }
