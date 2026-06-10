@@ -2,18 +2,15 @@
   "name": "vp-react-start",
   "version": "0.0.0",
   "private": true,
-  "sideEffects": false,
   "type": "module",
+  "sideEffects": false,
   "scripts": {
-    "dev": "vp dev",
-    "check": "vp check",
-    "test": "vp test",
-    "build": "vp build"
+    "dev": "vp run task:app:dev",
+    "check": "vp run task:app:check",
+    "test": "vp run task:app:test",
+    "build": "vp run task:app:build",
+    "ready": "vp run task:ready"
   },
-  "engines": {
-    "node": ">=22.12.0"
-  },
-  "packageManager": "pnpm@11.5.2",
   "dependencies": {
     "@base-ui/react": "catalog:",
     "@tabler/icons-react": "catalog:",
@@ -34,6 +31,12 @@
     "@vitejs/plugin-react": "catalog:",
     "tailwindcss": "catalog:",
     "typescript": "catalog:",
-    "vite-plus": "catalog:"
-  }
+    "vite": "catalog:",
+    "vite-plus": "catalog:",
+    "vitest": "catalog:"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "packageManager": "pnpm@11.5.2"
 }
