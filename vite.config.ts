@@ -1,4 +1,5 @@
 import tailwindcss from "@tailwindcss/vite";
+import { tanstackStart } from "@tanstack/react-start/plugin/vite";
 import viteReact from "@vitejs/plugin-react";
 import { defineConfig } from "vite-plus";
 
@@ -55,7 +56,12 @@ export default defineConfig({
   // Vite plugins
   // ---------------------------------------------------------------------------
 
-  plugins: [viteReact(), tailwindcss()],
+  plugins: [
+    tanstackStart(),
+    // React's Vite plugin must come after Start's Vite plugin.
+    viteReact(),
+    tailwindcss(),
+  ],
 
   // ---------------------------------------------------------------------------
   // Formatting
