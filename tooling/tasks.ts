@@ -1,22 +1,18 @@
 import type { UserConfig } from "vite-plus";
 
-import { buildOutputPatterns, generatedPatterns } from "./patterns";
+import { buildOutputPatterns, generatedPatterns, outputPatterns } from "./patterns";
 
 type TaskInput = { auto: true } | string;
 
+const ignoredDependencyPatterns = ["node_modules", ".vite", ".vite-temp"];
+
 // Automatic input tracking keeps task cache keys accurate without manually
-// listing every source/config file. The exclusions remove generated, output, and
-// tool-owned files that can be read and rewritten during a task. Generated files
-// are derived from source files, so they should not independently affect cache
-// keys.
+// listing every source/config file. The exclusions remove dependency, generated,
+// output, and tool-owned files that can be read and rewritten during a task.
 const taskInput = [
   { auto: true },
-  "!**/node_modules/**",
-  "!**/.vite/**",
-  "!**/.vite-temp/**",
-  "!**/coverage/**",
-  "!**/dist/**",
-  "!**/.output/**",
+  ...ignoredDependencyPatterns.map((pattern) => `!**/${pattern}/**`),
+  ...outputPatterns.map((pattern) => `!**/${pattern}/**`),
   ...generatedPatterns.map((pattern) => `!**/${pattern}`),
 ] satisfies TaskInput[];
 
