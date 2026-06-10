@@ -1,9 +1,13 @@
 node_modules
+
 dist
 .output
 coverage
 .vite
 .vite-temp
+
 .env
 .env.*
 !.env.example
+
+.DS_Store
